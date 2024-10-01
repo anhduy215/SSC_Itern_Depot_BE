@@ -2,7 +2,6 @@ using DepotBackEnd.Repositories;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using repository;
-using service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +23,6 @@ builder.Services.AddCors(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<ContainerService>();
 builder.Services.AddScoped<ContainerRepository>();
 builder.Services.AddScoped<PositionContainerRepository>();
 builder.Services.AddMediatR(configuration => {

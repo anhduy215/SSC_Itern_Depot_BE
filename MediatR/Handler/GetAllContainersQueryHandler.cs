@@ -1,12 +1,8 @@
 ﻿using MediatR;
 using repository;
 using DepotBackEnd.DTO;
-using DepotBackEnd.MediatR.Queries;
+using DepotBackEnd.MediatR.Request;
 using DepotBackEnd.Repositories;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace DepotBackEnd.MediatR.Handler
 {
@@ -39,11 +35,11 @@ namespace DepotBackEnd.MediatR.Handler
                 result.Add(new ContainerDTO
                 {
                     ISO = c.ISO,
-                    OwnerName = c.ContainerOwner.OwnerName,
-                    LineOperatorName = c.LineOperator.LineOperatorName,
-                    Location = c.LocationStatus.Status,
-                    Size = c.ContainerSize.SizeContainer,
-                    PositionValue = positionValue // Gán giá trị cho PositionValue
+                    OwnerName = c.ContainerOwner?.OwnerName,
+                    LineOperatorName = c.LineOperator?.LineOperatorName,
+                    Location = c.LocationStatus?.Status,
+                    Size = c.ContainerSize?.SizeContainer ?? 0,
+                    PositionValue = string.IsNullOrEmpty(positionValue) ? null : positionValue
                 });
             }
 

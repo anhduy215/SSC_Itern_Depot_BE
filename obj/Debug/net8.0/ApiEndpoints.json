@@ -21,24 +21,56 @@
     "EndpointName": "getAllContainer"
   },
   {
-    "ContainingType": "DepotBackEnd.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
+    "ContainingType": "DepotBackEnd.Controllers.ContainerController",
+    "Method": "CreateContainer",
+    "RelativePath": "Container",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[DepotBackEnd.WeatherForecast, DepotBackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "containerDTO",
+        "Type": "DepotBackEnd.DTO.CreateContainerDTO",
+        "IsRequired": true
       }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DepotBackEnd.Controllers.ContainerController",
+    "Method": "UpdateContainer",
+    "RelativePath": "Container/{containerNumber}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "containerNumber",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "containerDTO",
+        "Type": "DepotBackEnd.DTO.UpdateContainerDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DepotBackEnd.Controllers.ContainerController",
+    "Method": "DeleteContainer",
+    "RelativePath": "Container/{containerNumber}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "containerNumber",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
