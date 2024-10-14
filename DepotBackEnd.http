@@ -1,0 +1,6 @@
+@DepotBackEnd_HostAddress = http://localhost:5027
+
+GET {{DepotBackEnd_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
